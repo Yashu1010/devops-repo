@@ -1,6 +1,4 @@
 provider "aws" {
-    access_key = abs()
-    secret_key = 
     region = "us-east-1"
     
 }
@@ -12,4 +10,7 @@ resource "aws_instance" "myec2" {
     key_name = "yash-key.pem"
     instance_type = t2.micro
     vpc_security_group_ids = [ "mysg" ]
+    tags = {
+        Name = "practice instancegit"
+    }
 }
