@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "aws" {
-    region = "us-east-1"    
+    region = var.region   
 }
 resource "aws_instance" "myec2" {
     ami = "ami-04b4f1a9cf54c11d0"
@@ -64,5 +64,19 @@ resource "aws_route_table" "my_route" {
 resource "aws_route_table_association" "route_subnet" {
     subnet_id = aws_subnet.pub_sub.id
     route_table_id = aws_route_table.my_route.id
+  
+}
+
+variable "region" {
+    default = "us-east-1"
+}
+
+output "aws_instance" {
+    value = aws_instance.myec2.public_ip
+  
+}
+
+output "aws_vpc" {
+    value = aws_vpc.myvpc.id
   
 }
