@@ -10,6 +10,7 @@ resource "aws_instance" "myec2" {
     key_name = "yash-key.pem"
     instance_type = "t2.micro"
     vpc_security_group_ids = [ "mysg" ]
+    subnet_id = aws_subnet.pub_sub.id
     tags = {
         Name = "practice instancegit"
     }
