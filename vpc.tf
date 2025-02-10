@@ -13,6 +13,7 @@ resource "aws_instance" "myec2" {
     ami = "ami-04b4f1a9cf54c11d0"
     key_name = "yash-key"
     instance_type = "t2.micro"
+    vpc_security_group_ids = [ data.aws_security_groups.mysg ]
     subnet_id = aws_subnet.pub_sub.id
     tags = {
         Name = "practice_instance"
@@ -67,21 +68,12 @@ resource "aws_route_table_association" "route_subnet" {
   
 }
 
-variable "region" {
-    default = "us-east-1"
-}
-
-output "aws_instance" {
-    value = aws_instance.myec2.public_ip
-  
-}
-
-output "aws_vpc" {
-    value = aws_vpc.myvpc.id
-  
-}
-
 data "aws_security_groups" "mysg" {
+filter {
+  name = "vpc_id"
+  values = [ "vpc-06dece13c4295c563" ]
+}
+
     filter {
       name = "group-name"
       values = [ "mysg" ]
