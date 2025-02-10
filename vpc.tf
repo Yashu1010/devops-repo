@@ -80,3 +80,10 @@ output "aws_vpc" {
     value = aws_vpc.myvpc.id
   
 }
+
+data "aws_security_groups" "mysg" {
+    filter {
+      name = "group-name"
+      values = [ "mysg" ]
+    }
+}
