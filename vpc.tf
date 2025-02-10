@@ -69,10 +69,7 @@ resource "aws_route_table_association" "route_subnet" {
 }
 
 data "aws_security_groups" "mysg" {
-filter {
-  name = "vpc_id"
-  values = [ "vpc-06dece13c4295c563" ]
-}
+
 
     filter {
       name = "group-name"
