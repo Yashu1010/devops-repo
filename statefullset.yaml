@@ -21,7 +21,7 @@ spec:
         env:
         - name: MARIADB_ROOT_PASSWORD
           valuefrom:
-            configMapkeyref: 
+            configMapKeyRef: 
               key: password
 
 
