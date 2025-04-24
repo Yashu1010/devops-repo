@@ -3,10 +3,10 @@ kind: StatefulSet
 metadata:
   name: mystatefulset
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: myapp  
+      app: myapp
   template:
     metadata:
       labels:
