@@ -10,7 +10,7 @@ spec:
     metadata:
       name: myreplicationCrtlpod
       labels:
-        app: myreplicationCrtl
+        app: myreplicationCrtlpod
     spec:
       containers:
         - name: mynginx
