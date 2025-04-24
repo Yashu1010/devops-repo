@@ -6,8 +6,8 @@ metadata:
     app: mydeployment
 spec:
   replicas: 3
-  # strategy:
-  #   type: Recreate
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: mydeployment
@@ -17,7 +17,7 @@ spec:
         app: mydeployment
     spec:
       containers:
-      - name: myhttpd
-        image: httpd
+      - name: nginx
+        image: nginx
         ports:
         - containerPort: 80
