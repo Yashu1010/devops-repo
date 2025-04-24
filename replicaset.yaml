@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels: 
-        app: myrs
+        env: dev
     spec:
       containers:
         - name: myrs
