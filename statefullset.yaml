@@ -20,7 +20,7 @@ spec:
           name: web
         env:
         - name: MARIADB_ROOT_PASSWORD
-          valuefrom:
+          valueFrom:
             configMapKeyRef: 
               key: password
 
