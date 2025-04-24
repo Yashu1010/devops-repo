@@ -1,6 +1,7 @@
-kind: apiVersion: v1
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: myapp
 data:
   password: admin@123
+  department: dev
