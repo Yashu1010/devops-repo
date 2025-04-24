@@ -6,17 +6,17 @@ metadata:
     app: myrs
     env: dev
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: myrs
+      env: dev
   template:
     metadata:
-      labels: 
+      labels:
         env: dev
     spec:
       containers:
-        - name: myrs
+        - name: myapp
           image: httpd
           ports:
             - containerPort: 80
