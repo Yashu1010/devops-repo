@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    app: myreplicationCrtlpsd
+    app: myreplicationCrtlpod
   template:
     metadata:
       name: myreplicationCrtlpod
