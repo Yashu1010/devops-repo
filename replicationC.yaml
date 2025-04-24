@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myreplicationCrtl
+spec:
+  replicas: 3
+  selector:
+    app: myreplicationCrtlpsd
+  template:
+    metadata:
+      name: myreplicationCrtlpod
+      labels:
+        app: myreplicationCrtl
+    spec:
+      containers:
+        - name: mynginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+
