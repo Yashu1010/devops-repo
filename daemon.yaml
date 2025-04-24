@@ -1,3 +1,22 @@
-
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
+  name: monitoring
+  labels:
+    app: myapp
+    tier: monitoring
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: monitoring
+  template:
+    metadata:
+      labels:
+        tier: monitoring
+    spec:
+      containers:
+        - name: myapp
+          image: nginx
+          ports:
+            - containerPort: 80
